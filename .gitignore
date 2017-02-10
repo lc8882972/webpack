@@ -1,0 +1,17 @@
+# nodejs
+node_modules/
+npm-debug.log.*
+npm-debug.log
+
+# vscode
+.vscode/
+
+# runner test
+coverage/
+
+# builder
+dist/
+
+
+
+
