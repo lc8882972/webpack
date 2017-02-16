@@ -11,17 +11,24 @@ module.exports = {
     },
     module: {
         rules: [
+            // {
+            //     test: /\.js$/,
+            //     use: 'babel-loader'
+            // }, 
             {
-                test: /\.js$/,
-                use: 'babel-loader'
-            }, {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
-                    use: [{
-                        loader: "css-loader" // translates CSS into CommonJS
-                    }, {
-                        loader: "sass-loader" // compiles Sass to CSS
-                    }]
+                    use: [
+                        {
+                            loader: "css-loader" // translates CSS into CommonJS
+                        },
+                        {
+                            loader: "postcss-loader"
+                        },
+                        {
+                            loader: "sass-loader" // compiles Sass to CSS
+                        }
+                    ]
                 })
             }
         ]
