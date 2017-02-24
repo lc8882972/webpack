@@ -17,3 +17,16 @@ div{
   border: 1px solid #ddd; /*no*/
   font-size: 28px; /*px*/
 }
+
+.row{
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    height: 5rem;
+    box-sizing: border-box;    
+}
+
+.col{
+    flex: 1;
+    height: 100%;
+}
