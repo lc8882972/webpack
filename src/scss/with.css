@@ -1,0 +1,180 @@
+input[type=text] {
+    outline: none;
+    border: none;
+}
+
+/*::-webkit-input-placeholder:#9b9b9b;*/
+
+.page {
+    width: 100%;
+    height:100%;
+    padding: 36px 29px 0 29px;
+    box-sizing: border-box;
+    background: #efeef4;
+}
+
+.head {
+  width: 100%;
+  height: 100px;
+  line-height: 100px; /*px*/
+  background-color: #ff6634;
+  color: #fff;
+  font-size: 36px;/*px*/
+  text-align:center;
+}
+
+.tip {
+    font-size: 26px;
+    color: #828282;
+}
+
+.icon-back {
+    content: '';
+    position: absolute;
+    width:17px;
+    height:32px;
+    top:34px;
+    left:32px;
+    /*background: url(../img/loginRegister/return.png) no-repeat;*/
+    background-size:cover;
+}
+
+.icon-idcard::before {
+    content: '';
+    position: absolute;
+    width:42px;
+    height:34px;
+    top:24px;
+    left:15px;
+    /*background: url('../asset/images/shenfenzheng.png') no-repeat;*/
+    background-size:cover;
+}
+
+.icon-user::before {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 34px;
+    top: 24px;
+    left: 15px;
+    /*background: url('../asset/images/xingming.png')no-repeat;*/
+    background-size: cover;
+}
+.icon-code::before {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 30px;
+    top: 24px;
+    left: 15px;
+    /*background: url('../asset/images/yanzhengma.png')no-repeat;*/
+    background-size: cover;
+}
+.icon-dou::before {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    top: 24px;
+    left: 15px;
+    /*background: url('../asset/images/tixian.png') no-repeat;*/
+    background-size: cover;
+}
+
+.icon-bankcard::before {
+    content: '';
+    position: absolute;
+    width: 38px;
+    height: 30px;
+    top: 24px;
+    left: 15px;
+    /*background: url('../asset/images/yinghangka.png')no-repeat;*/
+    background-size: cover;
+}
+
+.from-control{
+    display:flex;
+    align-items:center;
+    width:100%;
+    margin-top:20px;
+    box-sizing:border-box;
+}
+
+.ui-input {
+    position:relative;
+    display: flex;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    margin-top: 20px;
+    padding-left:80px;
+    box-sizing:border-box;
+    border: 1px solid #9b9b9b; /*no*/
+    border-radius: 4px;/*px*/
+    background: #fff;
+}
+
+.ui-input::before {
+    content:'';
+    position:absolute;
+    display:block;
+    background:#d4d4d4;
+    top:17px;
+    left:68px;
+    height:56px;
+    width:1px; /*no*/
+}
+
+/*.ui-input:first-child{
+    margin-top:30px;
+}*/
+    .ui-input input {
+        display: inline-block;
+        height: 56px;
+        width:100%;
+        font-size: 32px;/*px*/
+        line-height:1.75;
+        box-sizing: border-box;
+        color: #9b9b9b;
+    }
+
+.ui-input-code,.ui-input-edou{
+    display:inline-flex;
+    width:492px;
+    margin-top:0;
+}
+
+.btn-submit {
+    width: 100%;
+    height: 82px;
+    margin-top: 36px;
+    background: #ff6634;
+    font-size: 36px;/*px*/
+    border-radius: 4px;
+    color: #fff;
+    line-height: 82px;
+    text-align: center;
+}
+
+.btn-code {
+    flex: 1;
+    height: 90px;
+    border: 1px solid #fa6732;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: #ff6634;
+    line-height: 90px;
+    font-size: 32px;/*px*/
+    text-align: center;
+}
+
+.error-box {
+    color:red;
+    padding-left:80px;
+    box-sizing:border-box;
+}
+
+.dou-tip{
+    font-size:30px; /*px*/
+    color:#5a5a5a
+}
