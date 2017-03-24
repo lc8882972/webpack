@@ -1,0 +1,112 @@
+.main {
+  background: #f0f0f0;
+}
+
+.head {
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  background-color: #ff6634;
+  color: #fff;
+  font-size: 36px;/*px*/
+  text-align: center;
+}
+
+.icon-back {
+  content: '';
+  position: absolute;
+  width: 17px;
+  height: 32px;
+  top: 34px;
+  left: 32px;
+  background: url(../img/loginRegister/return.png) no-repeat;
+  background-size: cover;
+}
+
+.label {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  padding: 54px 38px 30px 38px;
+  box-sizing: border-box;
+  font-size: 32px;/*px*/
+  color: #333;
+}
+
+.label .input-len{
+  font-size: 30px;/*px*/
+  color: #959595;
+  text-align: right;
+}
+
+.label span {
+  flex: 1;
+}
+
+.textarea {
+  width: 100%;
+  height: 280px;
+  padding: 32px 38px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.textarea textarea {
+  width: 100%;
+  height: 100%;
+  font-size: 32px;/*px*/
+  color: #a7a7a7;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.input {
+  width: 100%;
+  height: 84px;
+  padding: 12px 38px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.input input {
+  width: 100%;
+  height: 100%;
+  font-size: 32px;/*px*/
+  color: #a7a7a7;
+  border: none;
+  outline: none;
+}
+
+.btn-submit{
+  display: block;
+  width: 680px;
+  height: 94px;
+  margin: 46px auto 0;
+  background: #ff6634;
+  border-radius: 10px;/*px*/
+  color: #fff;
+  text-align: center;
+  line-height: 94px;
+  font-size: 40px;/*px*/
+}
+
+.tip{
+  margin-top:60px;
+  font-size: 32px;/*px*/
+  line-height:1;  
+  color: #333;
+  text-align: center;
+}
+
+.tip span{
+  color: #ff6634;
+}
+
+.tip1{
+  margin-top:20px;
+  font-size: 32px; /*px*/
+  line-height:1;  
+  color: #333;
+  text-align: center;
+}

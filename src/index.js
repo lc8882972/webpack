@@ -1,6 +1,5 @@
-// import '../styles.scss';
-// import './scss/per.css';
-import './scss/with.css';
+require('./scss/layout.scss');
+
 import { bar, Point } from './bar';
 import { utils } from '../main';
 

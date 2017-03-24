@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [
-    'src/index.js',
+    './src/index.js',
     'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
   ],
   output: {
@@ -50,7 +50,7 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'url-loader',
         options: {
-          limit: 10240,
+          limit: 20480,
           name: '[name].[ext]?[hash]'
         }
       }

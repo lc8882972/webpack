@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-cn" manifest="app.manifest">
+<html>
 
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title></title>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
   <script>
     ! function(a, b) {
       function c() {
@@ -219,37 +220,26 @@
       text-decoration: none;
     }
   </style>
+  <link href="css/layout.css" rel="stylesheet" />
+  <link href="css/guide.css" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="container">
-    <div class="say">
-      Hello World
-    </div>
-    <div>
-      <img src="assets/0356b19e3b72854.jpg" />
-    </div>
-    <div class="back">
-
-    </div>
-    <div class="row">
-      <div class="col">sdsdsd</div>
-      <div class="col"></div>
-    </div>
-    <div class="from">
-      <div class="input">
-        <input type="text" placeholder="请输入联系方式" />
-      </div>
-      <div class="input">
-        <input type="text" placeholder="请输入联系方式" />
-      </div>
-      <div class="input">
-        <label>手机号码</label>
-        <input type="text" placeholder="请输入联系方式" />
-        <input class="btn" type="button" value="验证码"/>
+  <div id="app">
+    <div class="container">
+      <header class="head">
+        <a href="javascript:history.go(-1);"><i class="icon icon-back"></i></a> 累计佣金
+      </header>
+      <div class="main">
+        <div class="banner">
+          <img src="assets/images/banner.png" />
+        </div>
+        <a class="btn btn-e2e" href="#"> 鹅兔鹅一起赚是什么？ <i class="icon-nav"></i></a>
+        <a class="btn btn-money" href="#">怎么赚钱取钱？<i class="icon-nav"></i></a>
       </div>
     </div>
   </div>
+
 </body>
 
 </html>

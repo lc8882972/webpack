@@ -34,7 +34,7 @@
 .info {
   width: 100%;
   height: 412px;
-  background: url('../asset/images/heibeijing.png') no-repeat;
+  background: url('../assets/images/heibeijing.png') no-repeat;
   background-size: cover;
 }
 
@@ -54,7 +54,7 @@
   left: -32px;
   width: 20px;
   height: 31px;
-  background: url('../asset/images/nan.png') no-repeat;
+  background: url('../assets/images/nan.png') no-repeat;
   background-size: cover;
 }
 
@@ -65,7 +65,7 @@
   left: -32px;
   width: 19px;
   height: 30px;
-  background: url('../asset/images/nv.png') no-repeat;
+  background: url('../assets/images/nv.png') no-repeat;
   background-size: cover;
 }
 
@@ -136,7 +136,7 @@
 .account-info {
   width: 100%;
   height: 288px;
-  background: url('../asset/images/bg-account.png') no-repeat;
+  background: url('../assets/images/bg-account.png') no-repeat;
   background-size: cover;
 }
 
@@ -167,7 +167,7 @@
   left: -64px;
   width: 44px;
   height: 56px;
-  background: url('../asset/images/edou.png') no-repeat;
+  background: url('../assets/images/edou.png') no-repeat;
   background-size: cover;
 }
 
@@ -179,7 +179,7 @@
   left:0;
   width: 22px;
   height: 26px;
-  background: url('../asset/images/xiaoedou.png') no-repeat;
+  background: url('../assets/images/xiaoedou.png') no-repeat;
   background-size: cover;
 }
 
@@ -212,7 +212,7 @@
   box-sizing: border-box;
 }
 
-input[type=checkbox]:checked+.icon-checkbox::before {
+input[type=checkbox]:checked + .icon-checkbox::before {
   content: '';
   position: absolute;
   display: inline-block;
@@ -220,7 +220,7 @@ input[type=checkbox]:checked+.icon-checkbox::before {
   width: 34px;
   height: 28px;
   border: none;
-  background: url('../asset/images/tishiduigou.png') no-repeat;
+  background: url('../assets/images/tishiduigou.png') no-repeat;
   background-size: cover;
 }
 
@@ -332,7 +332,7 @@ input[type=checkbox]:checked+.icon-checkbox::before {
   right:24px;
   width: 0.4rem;
   height: 0.4rem;
-  background: url('../asset/images/more.png') no-repeat;
+  background: url('../assets/images/more.png') no-repeat;
   background-size:cover; 
 }
 
@@ -459,6 +459,11 @@ input[type=checkbox]:checked+.icon-checkbox::before {
   color: #595959;
   font-size: 28px;/*px*/
   line-height: 1.5;
+}
+
+.duiyuan-info > img {
+  height: 25px;
+  width: auto;
 }
 
 .duiyuan-name {
