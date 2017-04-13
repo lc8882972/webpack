@@ -3,24 +3,26 @@ input[type=text] {
     border: none;
 }
 
-/*::-webkit-input-placeholder:#9b9b9b;*/
-
-.page {
-    width: 100%;
-    height:100%;
-    padding: 36px 29px 0 29px;
-    box-sizing: border-box;
-    background: #efeef4;
+.head {
+  position:fixed;
+  top:0;
 }
 
-.head {
+.page {
+    position:fixed;
+    top:100px;
+    bottom:0;
+    width: 100%;
+}
+
+.scroll-view {
   width: 100%;
-  height: 100px;
-  line-height: 100px; /*px*/
-  background-color: #ff6634;
-  color: #fff;
-  font-size: 36px;/*px*/
-  text-align:center;
+  height:100%;
+  padding: 36px 29px 0 29px;
+  box-sizing: border-box;
+  background: #efeef4;
+  overflow-y:scroll;
+  overflow-x:hidden;
 }
 
 .tip {
@@ -35,7 +37,7 @@ input[type=text] {
     height:32px;
     top:34px;
     left:32px;
-    /*background: url(../img/loginRegister/return.png) no-repeat;*/
+    background: url(../assets/images/icon-back.png) no-repeat;
     background-size:cover;
 }
 
@@ -46,7 +48,7 @@ input[type=text] {
     height:34px;
     top:24px;
     left:15px;
-    /*background: url('../asset/images/shenfenzheng.png') no-repeat;*/
+    background: url('../assets/images/shenfenzheng.png') no-repeat;
     background-size:cover;
 }
 
@@ -57,7 +59,7 @@ input[type=text] {
     height: 34px;
     top: 24px;
     left: 15px;
-    /*background: url('../asset/images/xingming.png')no-repeat;*/
+    background: url('../assets/images/xingming.png')no-repeat;
     background-size: cover;
 }
 .icon-code::before {
@@ -67,7 +69,7 @@ input[type=text] {
     height: 30px;
     top: 24px;
     left: 15px;
-    /*background: url('../asset/images/yanzhengma.png')no-repeat;*/
+    background: url('../assets/images/yanzhengma.png')no-repeat;
     background-size: cover;
 }
 .icon-dou::before {
@@ -77,7 +79,7 @@ input[type=text] {
     height: 34px;
     top: 24px;
     left: 15px;
-    /*background: url('../asset/images/tixian.png') no-repeat;*/
+    background: url('../assets/images/tixian.png') no-repeat;
     background-size: cover;
 }
 
@@ -88,7 +90,7 @@ input[type=text] {
     height: 30px;
     top: 24px;
     left: 15px;
-    /*background: url('../asset/images/yinghangka.png')no-repeat;*/
+    background: url('../assets/images/yinghangka.png')no-repeat;
     background-size: cover;
 }
 
@@ -159,7 +161,7 @@ input[type=text] {
 .btn-code {
     flex: 1;
     height: 90px;
-    border: 1px solid #fa6732;
+    border: 1px solid #fa6732; /*no*/
     box-sizing: border-box;
     border-radius: 4px;
     color: #ff6634;

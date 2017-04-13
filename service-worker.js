@@ -47,3 +47,11 @@ self.addEventListener('sync', function (event) {
 
     console.log(event);
 });
+
+function abc(){
+    
+}
+
+
+var obj= new abc();
+

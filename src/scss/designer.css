@@ -1,0 +1,483 @@
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+  }
+  
+  .flex-item {
+    flex: 1;
+  }
+  
+  .v-center {
+    align-items: center;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .head {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    color: #000;
+    font-size: 18px;
+  }
+  
+  .title {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  
+  .icon-back::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 24px;
+    width: 7.5px;
+    height: 15.5px;
+    background: url('/Content/images/v2.0img/icon-back.png') no-repeat;
+    background-size: cover;
+  }
+  
+  .icon-menu::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 8px;
+    width: 19px;
+    height: 17px;
+    background: url('/Content/images/v2.0img/icon-menu.png') no-repeat;
+    background-size: cover;
+  }
+  
+  .icon-collectioned {
+    content: '';
+    width: 15px;
+    height: 12.5px;
+    background: url('/Content/images/v2.0img/icon-collectioned.png') no-repeat;
+    background-size: cover;
+  }
+  
+  .icon-collection {
+    content: '';
+    width: 15px;
+    height: 13.5px;
+    background: url('/Content/images/v2.0img/icon-collection.png') no-repeat;
+    background-size: cover;
+  }
+  
+  .info {
+    width: 100%;
+    height: 178px;
+    padding-top: 16px;
+    box-sizing: border-box;
+    background: url('/Content/images/v2.0img/touxiangbeijing.png') no-repeat;
+    background-size: cover;
+  }
+  
+  .main {
+    position: fixed;
+    width: 100%;
+    top: 44px;
+    bottom: 50px;
+  }
+  
+  .scroll-view {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  
+  .headPortrait {
+    display: block;
+    width: 108px;
+    height: 108px;
+    margin: 0 auto 0;
+    border: 2px solid #fff; /*no*/
+    box-sizing: border-box;
+    border-radius: 50%;
+  }
+  
+  .info-name {
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .info-position {
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+  }
+  
+  .icon-dstyle::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 8px;
+    width: 19px;
+    height: 17px;
+    background: url('/Content/images/v2.0img/icon-shejifengge.png') no-repeat;
+    background-size: cover;
+  }
+  
+  .tab-head {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 36px;
+    color: #666666;
+    background: #fff;
+  }
+  
+  .tab-head::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 8px;
+    left: 50%;
+    bottom: 0;
+    display: block;
+    width: 1px;
+    height: 20px;
+    background: #d4d4d4;
+  }
+  
+  .tab-head::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #d4d4d4;
+  }
+  
+  .tab-item {
+    flex: 1;
+    height: 100%;
+    line-height: 36px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .tab-item-selected {
+    position: relative;
+    color: #2aa145;
+  }
+  
+  .tab-item-selected::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background: #2aa145;
+  }
+  
+  .tab-content {
+    width: 100%;
+    background: #fff;
+  }
+  
+  .case-info {
+    width: 84%;
+    padding: 19px 0 19px 19px;
+    box-sizing: border-box;
+  }
+  
+  .case-name {
+    width: 100%;
+    font-size: 16px;
+    color: #363636;
+  }
+  
+  .case-other-info {
+    width: 100%;
+    font-size: 14px;
+    color: #7a7a7a;
+  }
+  
+  .collection {
+    width: 15px;
+    height: 13.5px;
+  }
+  
+  .collection-counter {
+    margin-left: 7px;
+    font-size: 14px;
+    color: #7a7a7a;
+    box-sizing: border-box;
+  }
+  
+  .case-list {
+    width: 100%;
+    padding-top: 5px;
+    box-sizing: border-box;
+  }
+  
+  .case-item {
+    width: 100%;
+    padding-top: 15px;
+    border-bottom: 1px solid #d4d4d4;/*no*/
+    box-sizing: border-box;
+  }
+  
+  .case-item:first-child {
+    padding-top: 0;
+  }
+  
+  .case-img {
+    width: 100%;
+  }
+  
+  .details {
+    width: 100%;
+    margin-top: 5px;
+    padding-left: 12px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #d4d4d4;/*no*/
+  }
+  
+  .details-item {
+    width: 100%;
+    padding: 10px 12px 10px 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #444;
+    border-bottom: 1px solid #d4d4d4;/*no*/
+  }
+  
+  .details-item:last-child {
+    border-bottom: none;
+  }
+  
+  .details-star {
+    width: 15px;
+    height: 14px;
+  }
+  
+  .details-hd {
+    width: 30%;
+  }
+  
+  .details-hd img {
+    width: 15px;
+    height: auto;
+  }
+  
+  .details-bd {
+    color: #666;
+    text-align: right;
+    font-size: 15px;
+  }
+  
+  .t-left {
+    text-align: left;
+  }
+  
+  .online {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    padding: 0 29px;
+    box-sizing: border-box;
+    background: #fff;
+  }
+  
+  .btn {
+    display: inline-block;
+    width: 137px;
+    height: 36px;
+    line-height: 36px;
+    color: #000;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .btn-orange {
+    background: #ff892f;
+    color: #fff;
+  }
+  
+  .btn-green {
+    background: #2ba146;
+    color: #fff;
+  }
+  
+  .btn-green-border {
+    background: #fff;
+    border: 1px solid #2ba146;/*no*/
+    color: #2ba146;
+    box-sizing: border-box;
+  }
+  
+  .mask {
+    position: fixed;
+    z-index: 999;
+    top: 44px;
+    bottom: 0;
+    width: 100%;
+    padding: 0 25px 0;
+    background: rgba(0, 0, 0, .73);
+  }
+  
+  .mask-close-btn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .mask-close-btn:hover {
+    color: #fff;
+  }
+  
+  .mask-bd {
+    margin-top: 62px;
+    box-sizing: border-box;
+  }
+  
+  .grids {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .grid {
+    position: relative;
+    width: 33.333%;
+    height: 82px;
+    margin-bottom: 32px;
+    box-sizing: border-box;
+  }
+  
+  .grid-box {
+    position: relative;
+    width: 54px;
+    height: 54px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  .grid-icon {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .grid-text {
+    margin-top: 12.5px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .icon-mianfei::before {
+    content: '免费';
+    position: absolute;
+    left: 62%;
+    top: -12px;
+    display: block;
+    width: 36px;
+    height: 18px;
+    text-align: center;
+    border-radius: 8px;
+    font-style: normal;
+    background: red;
+    color: #fff;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  
+  .icon-huobao::before {
+    content: '火爆';
+    position: absolute;
+    left: 62%;
+    top: -12px;
+    display: block;
+    width: 36px;
+    height: 18px;
+    text-align: center;
+    border-radius: 8px;/*no*/
+    font-style: normal;
+    background: red;
+    color: #fff;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  
+  .line {
+    width: 100%;
+    height: 1px;
+    background: #f8f8f8;
+    box-sizing: border-box;
+  }
+  
+  .login-box {
+    width: 100%;
+    margin-top: 29px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 15px;
+  }
+  
+  .login-head {
+    width: 42px;
+    height: 42px;
+    margin-left: 20px;
+    border-radius: 50%;
+  }
+  
+  .login-btn {
+    margin-left: 14px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  .box-calltel {
+    background: #fff;
+    border-radius: 8px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+  }
+  
+  .telnumber {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    font-size: 18px;
+    text-align: center;
+  }

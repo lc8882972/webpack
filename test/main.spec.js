@@ -12,6 +12,4 @@ describe("main.js", function() {
         expect(false).toEqual(isInteger(0));
         expect(false).toEqual(isInteger(0));
     })
-
-
 });

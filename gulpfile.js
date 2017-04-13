@@ -10,7 +10,8 @@ var browserSyncObj = require('browser-sync').create();
 var reload = browserSync.reload;
 var processors = [
   px2rem({
-    remUnit: 75
+    remUnit: 10,
+    baseDpr: 1
   }),
   autoprefixer({ browsers: ['ios >= 8', 'android >=4.0'] })
 ];

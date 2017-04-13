@@ -1,8 +1,14 @@
 var autoprefixer = require('autoprefixer');
 var px2rem = require('postcss-px2rem');
 module.exports = {
-  plugins: [
-    px2rem(),
-    autoprefixer({ browsers: ['ios >= 8', 'android >=4.0'] })
-  ]
+  plugins: {
+    // to edit target browsers: use "browserlist" field in package.json
+    autoprefixer: {
+      browsers: ["ios >=8", "android >=4.0"]
+    },
+    "postcss-px2rem": {
+      remUnit: 10,
+      baseDpr: 1
+    }
+  }
 }
