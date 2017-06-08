@@ -1,0 +1,105 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+
+.flex {
+  display: flex;
+  width: 100%;
+}
+
+.flex.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex.v-center {
+  align-items: center;
+}
+
+.flex.h-center {
+  justify-content: center;
+}
+
+.flex.warp {
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  flex: 1
+}
+
+.row {
+  display: block;
+  width: 100%;
+}
+
+.col-1 {
+  display: inline-block;
+  width: 100%;
+}
+
+.col-2 {
+  display: inline-block;
+  width: 50%;
+}
+
+.col-3 {
+  display: inline-block;
+  width: 33.333%;
+}
+
+.col-4 {
+  display: inline-block;
+  width: 25%;
+}
+
+.col-5 {
+  display: inline-block;
+  width: 20%;
+}
+
+.col-6 {
+  display: inline-block;
+  width: 16.666%;
+}
+
+.col-7 {
+  display: inline-block;
+  width: 14.285%;
+}
+
+.col-8 {
+  display: inline-block;
+  width: 12.5%;
+}
+
+.col-9 {
+  display: inline-block;
+  width: 11.111%;
+}
+
+.col-10 {
+  display: inline-block;
+  width: 10%;
+}
+
+.icon {
+  font-size: 48px;
+  color: #333;
+}
+
+.ui-img{
+  width: 100%;
+  height: auto;
+}
+

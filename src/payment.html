@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <title>有品位支付</title>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script>
+        ! function(a, b) {
+            function c() {
+                var b = f.getBoundingClientRect().width;
+                b / i > 540 && (b = 540 * i);
+                var c = b / 10;
+                f.style.fontSize = c + "px", k.rem = a.rem = c
+            }
+            var d, e = a.document,
+                f = e.documentElement,
+                g = e.querySelector('meta[name="viewport"]'),
+                h = e.querySelector('meta[name="flexible"]'),
+                i = 0,
+                j = 0,
+                k = b.flexible || (b.flexible = {});
+            if (g) {
+                console.warn("将根据已有的meta标签来设置缩放比例");
+                var l = g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+                l && (j = parseFloat(l[1]), i = parseInt(1 / j))
+            } else if (h) {
+                var m = h.getAttribute("content");
+                if (m) {
+                    var n = m.match(/initial\-dpr=([\d\.]+)/),
+                        o = m.match(/maximum\-dpr=([\d\.]+)/);
+                    n && (i = parseFloat(n[1]), j = parseFloat((1 / i).toFixed(2))), o && (i = parseFloat(o[1]), j = parseFloat((1 / i).toFixed(2)))
+                }
+            }
+            if (!i && !j) {
+                var p = (a.navigator.appVersion.match(/android/gi), a.navigator.appVersion.match(/iphone/gi)),
+                    q = a.devicePixelRatio;
+                i = p ? q >= 3 && (!i || i >= 3) ? 3 : q >= 2 && (!i || i >= 2) ? 2 : 1 : 1, j = 1 / i
+            }
+            if (f.setAttribute("data-dpr", i), !g)
+                if (g = e.createElement("meta"), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + j + ", maximum-scale=" + j + ", minimum-scale=" + j + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g);
+                else {
+                    var r = e.createElement("div");
+                    r.appendChild(g), e.write(r.innerHTML)
+                }
+            a.addEventListener("resize", function() {
+                clearTimeout(d), d = setTimeout(c, 300)
+            }, !1), a.addEventListener("pageshow", function(a) {
+                a.persisted && (clearTimeout(d), d = setTimeout(c, 300))
+            }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function() {
+                e.body.style.fontSize = 12 * i + "px"
+            }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function(a) {
+                var b = parseFloat(a) * this.rem;
+                return "string" == typeof a && a.match(/rem$/) && (b += "px"), b
+            }, k.px2rem = function(a) {
+                var b = parseFloat(a) / this.rem;
+                return "string" == typeof a && a.match(/px$/) && (b += "rem"), b
+            }
+        }(window, window.lib || (window.lib = {}));
+    </script>
+    <style>
+        html {
+            color: #000;
+            background: #fff;
+            overflow-y: scroll;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        
+        html * {
+            outline: none;
+            -webkit-text-size-adjust: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+        
+        html,
+        body {
+            font-family: sans-serif;
+        }
+        /* 内外边距通常让各个浏览器样式的表现位置不同 */
+        
+        body,
+        div,
+        dl,
+        dt,
+        dd,
+        ul,
+        ol,
+        li,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code,
+        form,
+        fieldset,
+        legend,
+        input,
+        textarea,
+        p,
+        blockquote,
+        th,
+        td,
+        hr,
+        button,
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            margin: 0;
+            padding: 0;
+        }
+        
+        input,
+        select,
+        textarea {
+            font-size: 100%;
+        }
+        /* 去掉各 Table  cell 的边距并让其边重合 */
+        
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        /* 去除默认边框 */
+        
+        fieldset,
+        img {
+            border: 0;
+        }
+        /* 去掉 firefox 下此元素的边框 */
+        
+        abbr,
+        acronym {
+            border: 0;
+            font-variant: normal;
+        }
+        /* 一致的 del 样式 */
+        
+        del {
+            text-decoration: line-through;
+        }
+        
+        address,
+        caption,
+        cite,
+        code,
+        dfn,
+        em,
+        th,
+        var {
+            font-style: normal;
+            font-weight: 500;
+        }
+        /* 去掉列表前的标识, li 会继承 */
+        
+        ol,
+        ul {
+            list-style: none;
+        }
+        /* 对齐是排版最重要的因素, 别让什么都居中 */
+        
+        caption,
+        th {
+            text-align: left;
+        }
+        /* 来自 yahoo, 让标题都自定义, 适应多个系统应用 */
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+            font-weight: 500;
+        }
+        
+        q:before,
+        q:after {
+            content: '';
+        }
+        /* 统一上标和下标 */
+        
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+        
+        sup {
+            top: -0.5em;
+        }
+        
+        sub {
+            bottom: -0.25em;
+        }
+        /* 正常链接 未访问 */
+        /* 鼠标悬停 */
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        /* 默认不显示下划线，保持页面简洁 */
+        
+        ins,
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="scroll-view">
+            <img class="ui-img" src="assets/banner.png" />
+            <div class="pay-content">
+                <div class="pay-item">
+                    <h1 class="pay-title">有品位全国旅游年卡（电子卡）</h1>
+                    <p class="pay-price">￥68.00</p>
+                </div>
+                <div class="pay-item">
+                    <div class="pay-count-box">
+                        <p class="pay-count">购买数量</p>
+                        <p class="pay-action-box">
+                            <span class="btn-subtr">-</span>
+                            <span class="btn-count">1</span>
+                            <span class="btn-add">+</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="pay-phone-box">
+                    <div class="flex pay-phone-row">
+                        <span class="flex-item pay-phone-label">手机号码</span>
+                        <span class="flex-item pay-phone-val"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex pay-box">
+                <div class="flex-item pay-counter-box">
+                    <span>共<i class="pay-counter">1</i>张，合计：</span>
+                    <span class="pay-total">￥68.00</span>
+                </div>
+                <a class="btn-pay" href="javascript:void(0);">立即支付</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+        function queryString(name) {
+
+            var result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+            if (result == null || result.length < 1) {
+                return "";
+            }
+            return result[1];
+        }
+
+        function trim(str) {
+            return str.replace(/(^\s*)|(\s*$)/g, "");
+        }
+
+        function addition() {
+            var counter = $('.btn-count').text();
+            var add = parseInt(counter);
+            add++;
+            $('.btn-count').text(add);
+            var price = queryString('price');
+            var total = (parseFloat(price) * add).toFixed(2);
+            $('.pay-total').text('￥' + total);
+        }
+
+        function subtraction() {
+            var counter = $('.btn-count').text();
+            var sub = parseInt(counter);
+            if (sub > 1) {
+                sub--;
+                $('.btn-count').text(sub);
+                var price = queryString('price');
+                var total = (parseFloat(price) * sub).toFixed(2);
+                $('.pay-total').text('￥' + total);
+
+            } else {
+                alert('最少购买一张！');
+            }
+        }
+
+        $(document).ready(function() {
+            $('.btn-add').on('click', addition);
+            $('.btn-subtr').on('click', subtraction);
+
+            var price = queryString('price');
+            $('.pay-price').text('￥' + price);
+            $('.pay-total').text('￥' + price);
+            var phone =queryString('phone');
+            $('.pay-phone-val').text(phone);
+        });
+        var redirectUrl = queryString("redirect");
+        $('.btn-pay').on('click',function() {
+
+
+            //var _pay = {
+            //    timestamp: 0, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+            //    nonceStr: '', // 支付签名随机串，不长于 32 位
+            //    package: '', // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+            //    signType: '', // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
+            //    paySign: '', // 支付签名
+            //    appId: '',
+            //    success: function (res) {
+            //        // 支付成功后的回调函数
+            //        var redirect = queryString("redirect");
+            //        var url = decodeURIComponent(redirect);
+            //        location.href = url;
+            //    },
+            //    cancel: function (res) {
+            //        // 取消支付后的回调函数
+            //    }
+            //}
+
+            if (typeof WeixinJSBridge == "undefined") {
+                if (document.addEventListener) {
+                    document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+                } else if (document.attachEvent) {
+                    document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                    document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+                }
+            } else {
+
+                fPostCharge();
+            }
+
+        });
+
+
+        //调用微信JS api 支付
+        function fPostCharge() {
+
+            var orderFrom = {
+                sourceOpenId: queryString('openId'),
+                action: 1,
+                ucode: queryString('ucode'),
+                productId: queryString('productId'),
+                price: queryString('price'),
+                phone: queryString('phone'),
+                cid: queryString('cid')
+            };
+
+
+
+            $.ajax({
+                type: "post",
+                url: "/Home/RemoteOrder",
+                data: orderFrom,
+                dataType: "json",
+                success: function(result) {
+                    if (result.State) {
+
+                        wxPay(result.OrderId);
+                    } else {
+                        //    $("#dialog2").show();
+                        //    $("#tc_size").html(result.error_msg);
+                        //    $("#buy_now").removeAttr("disabled");
+                        //}
+
+                        console.log(result.error_msg);
+                    }
+                }
+            });
+
+        }
+
+        //微信统一下单
+        function wxPay(orderid) {
+
+            $.ajax({
+                type: 'post',
+                url: '/weixin/wxpayParam',
+                data: {
+                    OrderId: orderid
+                },
+                dataType: 'json',
+                beforeSend: function(xhr, settings) {
+
+                },
+                success: function(data) {
+
+                    if (data.State) {
+                        WeixinJSBridge.invoke(
+                            'getBrandWCPayRequest', {
+                                "appId": data.param.appId, //公众号名称，由商户传入
+                                "timeStamp": data.param.timeStamp, //时间戳，自1970年以来的秒数
+                                "nonceStr": data.param.nonceStr, //随机串
+                                "package": data.param.package,
+                                "signType": "MD5", //微信签名方式:
+                                "paySign": data.param.paySign //微信签名
+                            },
+                            function(res) {
+                                if (res.err_msg == "get_brand_wcpay_request:ok") {
+                                    //window.location.href = window.location.href;
+                                    var redirect = queryString("redirect");
+                                    var url = decodeURIComponent(redirect);
+                                    location.href = url;
+                                }
+                            });
+
+
+                    } else {
+                        console.error(data.error_info)
+                    }
+                },
+                error: function(xhr, type) {
+                    alert('网络异常,请您重新提交');
+                }
+            });
+        }
+
+        //调用微信支付模块
+        function onBridgeReady() {
+
+            fPostCharge();
+        }
+    </script>
+</body>
+
+</html>

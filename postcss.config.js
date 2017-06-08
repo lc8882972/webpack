@@ -7,8 +7,8 @@ module.exports = {
       browsers: ["ios >=8", "android >=4.0"]
     },
     "postcss-px2rem": {
-      remUnit: 10,
-      baseDpr: 1
+      remUnit: 75,
+      baseDpr: 2
     }
   }
 }
