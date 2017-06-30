@@ -1,12 +1,14 @@
-// require('./scss/layout.scss');
-// require('./scss/payment.scss');
-import { bar, Point } from './bar';
-import { utils } from '../main';
+require('./scss/article.scss')
+require('./article.js')
+require('html-loader?attrs=img:data-src!./article.html')
 
-bar();
+// import { bar, Point } from './bar'
+// // import { utils } from '../main'
 
-// var point = new Point(100, 100);
+// bar()
 
+// var point = new Point(100, 100)
+// point.toString()
 // console.log( utils.isNumber(1));
 
 // if (navigator.serviceWorker) {

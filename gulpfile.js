@@ -4,32 +4,32 @@ var sass = require('gulp-sass')
 var postcss = require('gulp-postcss')
 var px2rem = require('postcss-px2rem')
 var autoprefixer = require('autoprefixer')
-var browserSync = require('browser-sync').create();
-var webpack = require('webpack');
-var webpackStream = require('webpack-stream');
-var reload = browserSync.reload;
+var browserSync = require('browser-sync').create()
+var webpack = require('webpack')
+var webpackStream = require('webpack-stream')
+var reload = browserSync.reload
 var processors = [
     px2rem({
         remUnit: 75,
         baseDpr: 2
     }),
     autoprefixer({ browsers: ['ios >= 8', 'android >=4.0'] })
-];
+]
 
 gulp.task('default', function() {
-    var obj = JSON5.parse('{ "presets": ["es2015"] }');
-    console.log(obj);
+    var obj = JSON5.parse('{ "presets": ["es2015"] }')
+    console.log(obj)
 })
 
 gulp.task('build', function() {
-    gulp.start(['autopre']);
+    gulp.start(['autopre'])
 })
 
 gulp.task('build-sass', function() {
     gulp.src('./src/scss/**.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss(processors))
-        .pipe(gulp.dest('./dist/css'));
+        .pipe(gulp.dest('./dist/css'))
 })
 
 // gulp.task('watch', function() {
@@ -42,8 +42,7 @@ var browserSyncTask = function() {
     var compiler = webpack(webpackConfig)
 
     var server = {
-        baseDir: ['./', './dist'],
-        index: './src/index.html'
+        baseDir: ['./', './dist']
     }
 
     server.middleware = [
@@ -63,8 +62,8 @@ var browserSyncTask = function() {
     browserSync.init({
         server: server
     })
-    gulp.watch('./src/payment.html').on('change', reload);
-    gulp.watch('./src/scss/*.scss').on('change', reload);
+    gulp.watch('./src/article.html').on('change', reload)
+    gulp.watch('./src/scss/*.scss').on('change', reload)
 }
 
 gulp.task('server', browserSyncTask)
@@ -83,7 +82,7 @@ gulp.task('server', browserSyncTask)
 // })
 
 gulp.task('webpackStream', function() {
-  return gulp.src('src/index.html')
-    .pipe(webpackStream(require('./webpack.config.js')))
-    .pipe(gulp.dest('dist/'));
-});
+    return gulp.src('src/index.html')
+        .pipe(webpackStream(require('./webpack.config.js')))
+        .pipe(gulp.dest('dist/'))
+})

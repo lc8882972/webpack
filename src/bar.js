@@ -1,17 +1,15 @@
 export function bar() {
-  //TODO
-  console.log("bar()");
-
-  
+    //TODO
+    console.log('bar()')
 }
 
 export class Point {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-  }
+    constructor(x, y) {
+        this.x = x
+        this.y = y
+    }
 
-  toString() {
-    return '(' + this.x + ', ' + this.y + ')';
-  }
+    toString() {
+        return '(' + this.x + ', ' + this.y + ')'
+    }
 }

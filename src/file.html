@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <title>file upload</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <form name="form1" method="post" enctype="multipart/form-data" action="/api/UploadFile/UploadImg">
+        <div>
+            <label for="caption">Image Caption</label>
+            <input name="name" type="text" value="4dd1bd0d-6bd8-4873-90f5-08bd68ed3132" />
+        </div>
+        <div>
+            <label for="image">Image File</label>
+            <input name="fieldNameHere" type="file" accept="image/*"/>
+        </div>
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+</body>
+
+</html>
