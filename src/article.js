@@ -16,6 +16,7 @@ new Vue({
         },
         article: {
             title: '',
+            important:'',
             content: '',
             viewCount: 0,
             commentCount: 0,
@@ -36,6 +37,7 @@ new Vue({
 
                     if (result.status == 200) {
                         self.article.title = result.data.title
+                        self.article.important = result.data.important
                         self.article.content = result.data.content
                         self.article.viewCount = result.data.viewcount
                         self.article.commentCount = result.data.commentcount

@@ -1,4 +1,3 @@
-var JSON5 = require('json5')
 var gulp = require('gulp')
 var sass = require('gulp-sass')
 var postcss = require('gulp-postcss')
@@ -8,6 +7,8 @@ var browserSync = require('browser-sync').create()
 var webpack = require('webpack')
 var webpackStream = require('webpack-stream')
 var reload = browserSync.reload
+var proxyMiddleware = require('http-proxy-middleware')
+
 var processors = [
     px2rem({
         remUnit: 75,
@@ -15,11 +16,6 @@ var processors = [
     }),
     autoprefixer({ browsers: ['ios >= 8', 'android >=4.0'] })
 ]
-
-gulp.task('default', function() {
-    var obj = JSON5.parse('{ "presets": ["es2015"] }')
-    console.log(obj)
-})
 
 gulp.task('build', function() {
     gulp.start(['autopre'])
@@ -32,20 +28,16 @@ gulp.task('build-sass', function() {
         .pipe(gulp.dest('./dist/css'))
 })
 
-// gulp.task('watch', function() {
-//     gulp.watch('./src/scss/*.scss', ['build-sass']);
-//     gulp.watch('./src/scss/**.css', ['autopre']);
-// });
-
 var browserSyncTask = function() {
     var webpackConfig = require('./webpack.config')
     var compiler = webpack(webpackConfig)
-
+    var proxy = proxyMiddleware('/api', {target: 'http://localhost:56148'})
     var server = {
         baseDir: ['./', './dist']
     }
 
     server.middleware = [
+        proxy,
         require('webpack-dev-middleware')(compiler, {
             stats: 'errors-only',
             noInfo: true,
@@ -67,19 +59,6 @@ var browserSyncTask = function() {
 }
 
 gulp.task('server', browserSyncTask)
-
-// gulp.task('autopre', function() {
-//     gulp.src('./src/scss/**.css')
-//         .pipe(postcss(processors))
-//         .pipe(gulp.dest('./dist/css'));
-// })
-
-// gulp.task('autopreW', function() {
-//     gulp.src('./src/scss/*.css')
-//         // .pipe(postcss(processors))
-//         .pipe(gulp.dest('./dist/css'))
-//         .pipe(reload({ stream: true }));
-// })
 
 gulp.task('webpackStream', function() {
     return gulp.src('src/index.html')

@@ -2,16 +2,17 @@ const path = require('path')
 const webpack = require('webpack') //to access built-in plugins
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 var config = {
     entry: [
-        './src/index.js',
-        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+        './src/index.js'
     ],
     output: {
         publicPath: '/',
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js',
+        filename: 'js/[name].[chunkhash:8].js',
+        chunkFilename: 'js/[id].[chunkhash:8].js'
     },
     devtool: '#source-map',
     module: {
@@ -61,7 +62,7 @@ var config = {
                 loader: 'url-loader',
                 options: {
                     limit: 10240,
-                    name: 'img/[name].[ext]'
+                    name: 'img/[name].[hash:8].[ext]'
                 }
             },
             {
@@ -69,7 +70,7 @@ var config = {
                 loader: 'url-loader',
                 options: {
                     limit: 10240,
-                    name: 'fonts/[name].[ext]'
+                    name: 'font/[name].[hash:8].[ext]'
                 }
             }
         ]
@@ -80,12 +81,34 @@ var config = {
         }
     },
     plugins: [
-        new ExtractTextPlugin('styles.css'),
+        new ExtractTextPlugin('css/styles.[hash:8].css'),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/article.html'
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.LoaderOptionsPlugin({
+            minimize: true
+        }),
+        new CopyWebpackPlugin([{
+            from: path.resolve(__dirname, './assets'),
+            to: 'assets',
+            toType: 'dir',
+            ignore: ['\.js$']
+        }]),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: function(module) {
+                // any required modules inside node_modules are extracted to vendor
+                return (
+                    module.resource && /\.js$/.test(module.resource) && module.resource.indexOf(path.join(__dirname, '../node_modules')) === 0
+                )
+            }
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest',
+            chunks: ['vendor']
+        })
     ]
 }
 
