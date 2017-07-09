@@ -1,6 +1,6 @@
 // Karma configuration
 // Generated on Fri Feb 10 2017 16:59:14 GMT+0800 (中国标准时间)
-var webpackConfig = require('./karma.webpack.config.js');
+var webpackConfig = require('./karma.webpack.config.js')
 module.exports = function(config) {
     config.set({
 
